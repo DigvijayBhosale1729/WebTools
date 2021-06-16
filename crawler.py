@@ -57,7 +57,7 @@ def find_directories_recursive(content, target_url, n):
 
 
 target = "127.0.0.1"
-filename = "sws.txt"
+filename = "sw.txt"
 count = file_len(filename)
 with open(filename, "r") as wordlist_file:
   file_content = wordlist_file.readlines()
