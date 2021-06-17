@@ -35,5 +35,10 @@ def unique_links(target):
     return links
 
 
-target_url = "https://zsecurity.org"
-crawled_urls = unique_links(target_url)
+try:
+    target_url = "https://zsecurity.org"
+    crawled_urls = unique_links(target_url)
+except KeyboardInterrupt:
+    print("Keyboard Interrupt. Quitting")
+    exit(0)
+
