@@ -63,4 +63,9 @@ def crawl(filename, target):
 
 the_target_url = "127.0.0.1"
 word_list = "sws.txt"
-crawl(word_list, the_target_url)
+try:
+    crawl(word_list, the_target_url)
+except KeyboardInterrupt:
+    print("Keyboard Interrupt. Quitting")
+    exit(0)
+
