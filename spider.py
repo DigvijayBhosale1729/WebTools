@@ -4,6 +4,7 @@
 import requests
 import re
 import urllib.parse as urlparse
+links = []
 
 
 def request_url(url):
@@ -20,7 +21,7 @@ def extract_links(url):
 
 
 def unique_links(target):
-    links = []
+    global links
     href_links = extract_links(target)
     for link in href_links:
         link = urlparse.urljoin(target, link)
@@ -30,6 +31,7 @@ def unique_links(target):
         if target in link and link not in links:
             print(link)
             links.append(link)
+            unique_links(link)
     return links
 
 
